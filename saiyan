@@ -1,0 +1,59 @@
+$Loading = "supersaiyan"
+$count = 0
+
+$stopwatch = [system.diagnostics.stopwatch]::StartNew()
+
+while ($stopwatch.elapsed.totalseconds -lt 5) {
+    Write-Host $Loading -NoNewline
+    for ($i = 0; $i -lt $count; $i++) {
+        Write-Host "." -NoNewline
+    }
+    $count ++
+    if ($count -eq 4) {
+        $count = 0
+    }
+    Start-Sleep -m 100
+    Write-Host ""
+}
+
+Write-Host "Complete"
+
+
+
+
+
+
+
+
+-------------------------------------------------------------------------------
+
+$date = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
+Write-Host "Complete at $date"
+
+-------------------------------------------------------------------------------
+Copy code
+$Loading = "Loading"
+$count = 0
+
+$stopwatch = [system.diagnostics.stopwatch]::StartNew()
+
+while ($stopwatch.elapsed.totalseconds -lt 5) {
+    Write-Host $Loading -NoNewline
+    for ($i = 0; $i -lt $count; $i++) {
+        Write-Host "." -NoNewline
+    }
+    $count ++
+    if ($count -eq 4) {
+        $count = 0
+    }
+    Start-Sleep -m 100
+    Write-Host ""
+}
+
+$date = Get-Date
+Write-Host "Complete at $date"
+---------------------------------------------------------------------------------
+$date = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
+Write-Host "Complete at $date"
+
+
